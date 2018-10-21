@@ -1,4 +1,7 @@
 language: node_js
+node_js:
+  - "7"
+dist: trusty
 deploy:
     provider: gae
     # Skip cleanup so api_key.py and vendored dependencies are still there

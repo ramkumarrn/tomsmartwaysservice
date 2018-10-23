@@ -1,15 +1,11 @@
-language: node_js
-  node_js:
-     - "7"
 deploy:
-    provider: gae
-    language: node_js
-    node_js:
-      - "7"
-    # Skip cleanup so api_key.py and vendored dependencies are still there
-    skip_cleanup: true
-    keyfile: client-secret.json
-    project: continuous-deployment-python
-    default: true
-    on:
-        all_branches: master
+  provider: gae
+  skip_cleanup: true
+  keyfile: client-secret.json
+  project: prime-bridge-220106
+  default: true
+  on:
+    all_branches: master
+before_install:
+- openssl aes-256-cbc -K $encrypted_474036f87d1c_key -iv $encrypted_474036f87d1c_iv
+  -in client-secret.json.enc -out client-secret.json -d

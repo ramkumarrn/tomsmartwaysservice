@@ -16,9 +16,6 @@ deploy:
   on:
     all_branches: master
 before_install:
-- if [ ! -d "${GAE_PYTHONPATH}" ]; then
-    python scripts/fetch_gae_sdk.py $(dirname "${GAE_PYTHONPATH}");
-  fi
 - openssl aes-256-cbc -K $encrypted_474036f87d1c_key -iv $encrypted_474036f87d1c_iv
   -in client-secret.json.enc -out client-secret.json -d
 install:
